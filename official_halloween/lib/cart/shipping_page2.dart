@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:official_halloween/cart/cart_bag.dart';
+import 'package:official_halloween/cart/ordersuccess.dart';
 
 import '../screens/homepage.dart';
 
@@ -94,7 +95,9 @@ class _ShippingFeeState extends State<ShippingFee> {
               ),
             ),
           ),
-          const SizedBox(height: 30,),
+          const SizedBox(
+            height: 30,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Column(
@@ -171,15 +174,21 @@ class _ShippingFeeState extends State<ShippingFee> {
               ],
             ),
           ),
-          const Divider(color: Colors.black,thickness: 2,indent: 35,endIndent: 35,),
-                       const SizedBox(height: 20,),
-
+          const Divider(
+            color: Colors.black,
+            thickness: 2,
+            indent: 35,
+            endIndent: 35,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
           Column(
-              children: [                
-             Padding(
-               padding: const EdgeInsets.only(right: 150),
-               child: Text(
-                  "Shipping Price:  \$${10} ",
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 150),
+                child: Text(
+                  "Shipping Price:  \$${215} ",
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                         fontWeight: FontWeight.w500,
@@ -187,11 +196,13 @@ class _ShippingFeeState extends State<ShippingFee> {
                         fontSize: 20),
                   ),
                 ),
-             ),
-              const SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.only(right: 150),
-              child: Text(
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 150),
+                child: Text(
                   "Product Price:  \$${195} ",
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
@@ -200,11 +211,13 @@ class _ShippingFeeState extends State<ShippingFee> {
                         fontSize: 20),
                   ),
                 ),
-            ),
-               const SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.only(right: 210),
-              child: Text(
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 210),
+                child: Text(
                   "Discount:  \$${0} ",
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
@@ -213,12 +226,14 @@ class _ShippingFeeState extends State<ShippingFee> {
                         fontSize: 20),
                   ),
                 ),
-            ),
-               const SizedBox(height: 40,),
-            Padding(
-              padding: const EdgeInsets.only(right: 170),
-              child: Text(
-                  "Total Price:  \$${10} ",
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 170),
+                child: Text(
+                  "Total Price:  \$${215} ",
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                         fontWeight: FontWeight.w600,
@@ -226,48 +241,45 @@ class _ShippingFeeState extends State<ShippingFee> {
                         fontSize: 22),
                   ),
                 ),
-            ),
-              ],
-            ),
+              ),
+            ],
+          ),
           const SizedBox(height: 80),
           Padding(
             padding: const EdgeInsets.only(bottom: 100),
             child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ShippingFee(),
-                  ),
-                );
-              },
-              child: InkWell(
                 onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OrderSucess(),
+                    ),
+                  );
                 },
                 child: Container(
-                    height: 50,
-                    width: 350,
-                    decoration: BoxDecoration(
-                      color: Colors.deepOrangeAccent[400],
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    //child: Center(
-                    
-                    child: Center(
-                      child: Text(
-                        'Finish Order',
-                        style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 15),
-                        ),
+                  height: 50,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.deepOrangeAccent[400],
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  //child: Center(
+
+                  child: Center(
+                    child: Text(
+                      'Finish Order',
+                      style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 15),
                       ),
-                    )
-                    //),
                     ),
-              ),
-            ),
+                  ),
+                )
+                //),
+
+                ),
           ),
         ],
       ),

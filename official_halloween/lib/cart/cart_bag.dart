@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:official_halloween/cart/shipping.dart';
 
 import '../controller/cart_controller.dart';
+import '../screens/homepage.dart';
 
 class AddToCart extends StatefulWidget {
   const AddToCart({super.key});
@@ -37,7 +38,12 @@ class _AddToCartState extends State<AddToCart> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomePage(),
+                ),
+              );
                 },
                 child: Container(
                   height: 30,

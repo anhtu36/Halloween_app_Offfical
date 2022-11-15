@@ -18,47 +18,68 @@ class _MenuBarState extends State<MenuBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [
-        InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const HomePage(),
-              ),
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.only(left: 320, top: 60),
-            child: Row(
-              children: [
-                Container(
-                  height: 30,
-                  width: 30,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("images/back.png"),
-                        fit: BoxFit.cover),
-                  ),
+      appBar: AppBar(backgroundColor: Colors.white, elevation: 0, actions: [
+        Container(
+          height: 50,
+          width: 50,
+          child: IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomePage(),
                 ),
-              ],
-            ),
+              );
+            },
+            icon: Image.asset("images/back.png"),
           ),
         ),
-        Column(
-          children: [
-            ListView.builder(
-              // scrollDirection: Axis.vertical,
-              itemCount: categories.length,
-              itemBuilder: (context, index) => buildList(index),
-            ),
-          ],
-        ),
+        SizedBox(
+          width: 30,
+        )
       ]),
+      body: Container(
+        padding: const EdgeInsets.only(top: 40),
+            color: Colors.white,
+          child: ListView.builder(
+            itemCount: categories.length,
+            itemBuilder: (context, index) => buildMenuBar(index),
+          ),
+        ),
     );
   }
 
-  Widget buildList(int index) {
-    return Text(categories[index]);
+  Widget buildMenuBar(int index) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          selectedIndex = index;
+        });
+      },
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              categories[index],
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w300,
+                fontSize: 24,
+                color: selectedIndex == index ? Colors.black : Colors.black,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              height: 2,
+              width: 100,
+              color: selectedIndex == index ? Colors.black : Colors.transparent,
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
+
+// return 
+            

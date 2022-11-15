@@ -21,7 +21,6 @@ import '../model/data_model.dart';
 import '../page/page1.dart';
 import '../page/page2.dart';
 import '../page/page3.dart';
-import 'buy_button.dart';
 
 class HomePage extends StatefulWidget {
    final Data? product;
